@@ -1,0 +1,10 @@
+<table>
+  <%= @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.name %></td>
+      <td><%= employee.last_standup.strftime("%-d %b %Y %H:%m") %></td>
+      <td><%= employee.joined_at.strftime("%-d %b %Y") %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>

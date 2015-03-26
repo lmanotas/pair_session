@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StandupInterview</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <ul>
+    <li><a href="<%= new_standup_path %>">New Standup</a></li>
+    <li><a href="<%= new_employee_path %>">New Employee</a></li>
+  </ul>
+
+  <%= yield %>
+</body>
+</html>

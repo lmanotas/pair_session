@@ -1,0 +1,10 @@
+<table>
+  <%= @standups.each do |standup| %>
+    <tr>
+      <td><%= standup.time.strftime("%a, %-d %b %Y") %></td>
+      <td><%= standup.orangisers.map(&:name).join(", ") %></td>
+      <td><%= standup.attendees.map(&:name).join(", ") %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
