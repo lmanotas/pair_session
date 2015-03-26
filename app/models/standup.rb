@@ -4,4 +4,13 @@ class Standup < ActiveRecord::Base
 
   accepts_nested_attributes_for :standup_attendees
 
+
+  def orangisers
+    []
+  end
+
+  def attendee_names
+    employees.map(&:name).join(", ")
+  end
+
 end

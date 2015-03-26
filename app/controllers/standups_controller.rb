@@ -17,6 +17,6 @@ class StandupsController < ApplicationController
   end
 
   def standup_params
-    params.permit!
+    params[:standup].permit!
   end
 end

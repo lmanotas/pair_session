@@ -1,10 +1,16 @@
 <table>
-  <%= @standups.each do |standup| %>
+  <tr>
+    <th>When?</th>
+    <th>Where?</th>
+    <th>Organisers</th>
+    <th>Attendees</th>
+  </tr>
+  <% @standups.each do |standup| %>
     <tr>
-      <td><%= standup.time.strftime("%a, %-d %b %Y") %></td>
+      <td><%= standup.time.strftime("%a, %-d %b %Y at %H:%m") %></td>
+      <td><%= standup.location %></td>
       <td><%= standup.orangisers.map(&:name).join(", ") %></td>
-      <td><%= standup.attendees.map(&:name).join(", ") %></td>
-      <td></td>
+      <td><%= standup.attendee_names %></td>
     </tr>
   <% end %>
 </table>
