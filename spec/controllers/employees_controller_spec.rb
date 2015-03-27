@@ -8,7 +8,7 @@ describe EmployeesController do
       post :create, employee: { name: "Emma Employee" }
 
       expect(flash[:notice]).to be_present
-      expect(response).to redirect_to(employees_path)
+      expect(response).to be_redirect
     end
 
   end

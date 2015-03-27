@@ -7,7 +7,9 @@
   <label>
     Time
   </label>
-  <%= f.date_field :time %>
+  <div class="form-group">
+    <%= f.datetime_select :time, {}, class: "input-sm" %>
+  </div>
 
   <label>
     Organisers

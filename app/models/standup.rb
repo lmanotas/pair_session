@@ -12,11 +12,11 @@ class Standup < ActiveRecord::Base
   end
 
   def organiser_1
-    employees.where(id: organiser_1_employee_id)
+    Employee.where(id: organiser_1_employee_id).first
   end
 
   def organiser_2
-    employees.where(id: organiser_2_employee_id)
+    Employee.where(id: organiser_2_employee_id).first
   end
 
   def attendee_names

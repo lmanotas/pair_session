@@ -17,6 +17,7 @@ class StandupsController < ApplicationController
   end
 
   def show
+    @standup = Standup.find(params[:id])
   end
 
   def standup_params
