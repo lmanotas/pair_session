@@ -11,11 +11,14 @@ class EmployeesController < ApplicationController
   def create
     employee = Employee.new(employee_params)
     if employee.save
-      redirect_to employees_path, notice: "Employee created successfully"
+      redirect_to employee, notice: "Employee created successfully"
     else
       @employee = employee
       render :new
     end
+  end
+
+  def show
   end
 
   private

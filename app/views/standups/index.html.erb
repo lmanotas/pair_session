@@ -5,7 +5,7 @@
     <th>Organisers</th>
     <th>Attendees</th>
   </tr>
-  <% @standups.each do |standup| %>
+  <% @standups.order("time DESC").each do |standup| %>
     <tr>
       <td><%= standup.time.strftime("%a, %-d %b %Y at %H:%m") %></td>
       <td><%= standup.location %></td>

@@ -1,6 +1,14 @@
+<h2>New Employee</h2>
 <%= form_for @employee do |f| %>
-  <label>Employee name</label>
+
+  <label>Name</label>
   <%= f.text_field :name %>
+
+  <label>Email</label>
+  <%= f.text_field :email %>
+
+  <label>Phone</label>
+  <%= f.text_field :phone %>
 
   <%= f.submit  %>
 <% end %>

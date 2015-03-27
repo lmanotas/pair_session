@@ -1,0 +1,13 @@
+<h1>Employee</h1>
+<p>
+  <strong>ID:</strong>
+  <%= @employee.try(:id) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.try(:name) %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', standups_path %>

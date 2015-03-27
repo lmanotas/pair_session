@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20150326100757) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
+    t.string   "email"
+    t.string   "phone"
     t.datetime "joined_at"
     t.datetime "created_at"
     t.datetime "updated_at"

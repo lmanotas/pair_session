@@ -13,7 +13,10 @@ class StandupsController < ApplicationController
     @standup = Standup.new(standup_params)
     @standup.save
 
-    redirect_to standups_path
+    redirect_to @standup
+  end
+
+  def show
   end
 
   def standup_params

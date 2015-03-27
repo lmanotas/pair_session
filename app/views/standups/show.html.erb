@@ -1,0 +1,23 @@
+<h1>Standup</h1>
+<p>
+  <strong>ID:</strong>
+  <%= @standup.try(:id) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @standup.try(:location) %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @standup.try(:time) %>
+</p>
+
+<p>
+  <strong>Attendees count:</strong>
+  <%= @standup.try(:standup_attendees).try(:size) %>
+</p>
+
+<%= link_to 'Edit', edit_standup_path(@standup) %> |
+<%= link_to 'Back', standups_path %>

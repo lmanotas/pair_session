@@ -9,6 +9,12 @@
   </label>
   <%= f.date_field :time %>
 
+  <label>
+    Organisers
+  </label>
+  <%= f.collection_select :organiser_1_employee_id, Employee.all, :id, :name, prompt: true %>
+  <%= f.collection_select :organiser_2_employee_id, Employee.all, :id, :name, prompt: true %>
+
   <ul>
     <%= f.fields_for :standup_attendees do |a| %>
       <li>
@@ -17,4 +23,5 @@
     <% end %>
   </ul>
 
+  <%= f.submit %>
 <% end %>
