@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe "Standup", :type => :model do
+describe "Standup", :type => :model do
 
   describe "the attendee_names method" do
 
@@ -19,5 +19,18 @@ RSpec.describe "Standup", :type => :model do
         expect(standup.attendee_names).to eq("Emma Employee, Emma Employee")
       end
     end
+  end
+
+  describe '#organizers' do
+    subject{ create(:standup) }
+    let(:organizer){ create(:standup_attendee, standup: subject, employee: create(:employee, name: 'Chris Organizer'), organizer: true ) }
+    let(:attendee){ create(:standup_attendee, standup: subject, employee: create(:employee, name: 'Luis Attendee') ) }
+
+
+    before do
+      subject.standup_attendees = [organizer, attendee]
+    end
+
+    it {expect(subject.organizers).to eq([organizer.employee])}
   end
 end

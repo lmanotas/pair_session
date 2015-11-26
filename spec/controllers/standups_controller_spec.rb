@@ -16,7 +16,7 @@ describe StandupsController do
     end
 
     it "shows the list of standups" do
-      Standup.create(location: "Berlin", time: Time.now, organiser_1_employee_id: 1, organiser_2_employee_id: 2)
+      create(:standup, location: 'Berlin')
 
       get :index
 
